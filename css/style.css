@@ -1,0 +1,268 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1b1a15;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-style: italic;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+header.intro-header {
+    position: fixed; /* Fixar o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1b1a15;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Mesma altura do cabeçalho da tela principal */
+    z-index: 1000; /* Certificar que o cabeçalho está acima do conteúdo */
+    padding: 20px;
+}
+
+header.intro-header h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #213322;
+    padding: 0;
+}
+
+.wrapper{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.card{
+    width: 350px;
+    height: 390px;
+    padding: 5rem 1rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover{
+    transform: translateY(20px);
+}
+
+.card:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+    z-index: 2;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.card:hover:before{
+    opacity: 1;
+}
+
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card .info{
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+.card:hover .info{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.card .info h1{
+    margin: 0;
+}
+
+.card .info p{
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.card .info .btn{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.card .info .btn:hover{
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo da seta de retorno */
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Certifica-se que está sempre visível */
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #00b09b; /* Cor diferente ao passar o mouse */
+}
+
+/* Conteúdo da página readmore.html */
+.content {
+    padding: 100px 50px;
+    color: white;
+    background-color: #222;
+    height: 100vh;
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 220px 40px; /* Adiciona espaço suficiente abaixo do cabeçalho fixo */
+    margin-top: 20px;
+    height: calc(100vh - 100px); /* Altura da tela menos a altura do cabeçalho */
+}
+
+.text-content {
+    width: 45%;
+    color: white; /* Texto em branco */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+/* Estilo para o vídeo */
+.video-content {
+    width: 45%;
+    text-align: right;
+}
+
+.video-content iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Mantém a proporção de 16:9 para o vídeo */
+}
+
+.small-image {
+    position: fixed;
+    bottom: 10px; /* 10px de distância da parte inferior da janela */
+    right: 10px;  /* 10px de distância do lado direito da janela */
+    width: 100px; /* Definindo um tamanho pequeno para a imagem */
+    height: auto; /* Mantendo a proporção da imagem */
+    z-index: 1000; /* Certificando que a imagem fica acima de outros elementos */
+}
+
+/* Estilo dos ícones de redes sociais */
+.social-icons {
+    position: fixed;
+    bottom: 20px; /* Alinhado ao fundo, mas um pouco mais para o meio */
+    left: 50%;    /* Centralizado horizontalmente */
+    transform: translateX(-50%); /* Ajuste para manter os ícones centralizados */
+    display: flex;
+    gap: 20px;    /* Espaço entre os ícones */
+    z-index: 1000;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2rem; /* Tamanho dos ícones */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00b09b; /* Cor ao passar o mouse */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 120px 20px; /* Espaçamento reduzido nas laterais */
+    }
+
+    .text-content, .video-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .video-content {
+        text-align: center;
+    }
+}
